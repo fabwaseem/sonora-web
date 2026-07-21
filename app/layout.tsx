@@ -1,20 +1,34 @@
-import { Geist, Geist_Mono, Outfit, Nunito_Sans } from "next/font/google"
+import { Manrope, JetBrains_Mono } from "next/font/google"
+import type { Metadata } from "next"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 
-const nunitoSansHeading = Nunito_Sans({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-heading",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
 })
 
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" })
-
-const fontMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
+  weight: ["400", "500"],
   variable: "--font-mono",
 })
+
+// Display shares Manrope — Sonora's booth uses one sans family with weight contrast.
+
+export const metadata: Metadata = {
+  title: "Sonora — Private offline speech studio for Windows",
+  description:
+    "Create natural speech, transcribe audio, and dictate into any app—all on your machine. Fully offline TTS, STT, and global dictation.",
+  openGraph: {
+    title: "Sonora — Your voice studio, without the cloud",
+    description:
+      "A private, fully offline speech studio for Windows. Text-to-speech, speech-to-text, and global dictation on your machine.",
+    images: ["/images/preview.jpg"],
+  },
+}
 
 export default function RootLayout({
   children,
@@ -24,17 +38,22 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={cn(
-        "antialiased",
-        fontMono.variable,
-        "font-sans",
-        outfit.variable,
-        nunitoSansHeading.variable
+        "dark antialiased",
+        manrope.variable,
+        jetbrainsMono.variable,
+        "font-sans"
       )}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body
+        className="bg-bg text-fg"
+        style={
+          {
+            "--font-display": "var(--font-sans)",
+          } as React.CSSProperties
+        }
+      >
+        {children}
       </body>
     </html>
   )

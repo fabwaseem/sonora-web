@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img" aria-label="Sonora">
+  <!-- App tile -->
+  <rect width="512" height="512" rx="112" fill="#0a0a0c"/>
+  <!-- Soft inner wash -->
+  <rect x="28" y="28" width="456" height="456" rx="92" fill="#121214"/>
+  <!-- Accent plate -->
+  <rect x="144" y="144" width="224" height="224" rx="56" fill="#3b82f6"/>
+  <!-- Waveform bars (studio mark) -->
+  <path
+    d="M204 280v-48M236 300V212M268 312V200M300 296V216M332 276v-40"
+    stroke="#0a0a0c"
+    stroke-width="28"
+    stroke-linecap="round"
+  />
+</svg>
