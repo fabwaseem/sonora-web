@@ -5,7 +5,8 @@ import { AnimatePresence, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { LogoMark } from "./logo-mark"
 import { AccentButton } from "./accent-button"
-import { DOWNLOAD_URL, NAV_LINKS } from "./constants"
+import { Magnetic } from "./magnetic"
+import { triggerDownload, NAV_LINKS } from "./constants"
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -78,9 +79,11 @@ export function Navbar() {
 
           <div className="hidden items-center md:flex">
             {NAV_LINKS.map((link) => (
-              <a
+              <Magnetic
                 key={link.label}
+                as="a"
                 href={link.href}
+                strength={0.25}
                 onClick={(e) => {
                   e.preventDefault()
                   go(link.href, link.label)
@@ -93,22 +96,23 @@ export function Navbar() {
                 )}
               >
                 {link.label}
-              </a>
+              </Magnetic>
             ))}
           </div>
 
           <div className="flex items-center gap-1.5">
             <AccentButton
-              href={DOWNLOAD_URL}
-              external
+              onClick={triggerDownload}
               size="sm"
               className="hidden shrink-0 md:inline-flex"
             >
               Download
             </AccentButton>
 
-            <button
+            <Magnetic
+              as="button"
               type="button"
+              strength={0.3}
               className="relative flex size-10 items-center justify-center rounded-full border border-border bg-inset text-fg transition-colors hover:bg-surface-2 md:hidden"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
@@ -127,7 +131,11 @@ export function Navbar() {
                 />
                 <motion.span
                   className="absolute left-0 top-[7px] h-[1.5px] w-4 rounded-full bg-fg"
-                  animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                  animate={
+                    menuOpen
+                      ? { opacity: 0, scaleX: 0 }
+                      : { opacity: 1, scaleX: 1 }
+                  }
                   transition={{ duration: 0.2 }}
                 />
                 <motion.span
@@ -140,7 +148,7 @@ export function Navbar() {
                   transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                 />
               </span>
-            </button>
+            </Magnetic>
           </div>
         </nav>
 
@@ -189,11 +197,12 @@ export function Navbar() {
                   className="mt-2 border-t border-border pt-3"
                 >
                   <AccentButton
-                    href={DOWNLOAD_URL}
-                    external
+                    onClick={() => {
+                      setMenuOpen(false)
+                      triggerDownload()
+                    }}
                     size="md"
                     className="w-full"
-                    onClick={() => setMenuOpen(false)}
                   >
                     Download for Windows
                   </AccentButton>

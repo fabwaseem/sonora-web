@@ -8,9 +8,7 @@ import { ProductShowcase } from "./product-showcase"
 import { Features } from "./features"
 import { UseCases } from "./use-cases"
 import { Privacy } from "./privacy"
-import { HowItWorks } from "./how-it-works"
 import { StudioModes } from "./studio-modes"
-import { Download } from "./download"
 import { Faq } from "./faq"
 import { Footer } from "./footer"
 
@@ -28,7 +26,7 @@ export function SonoraPage() {
           <motion.div
             key="loader"
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.45 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
             <LoadingScreen onComplete={handleComplete} />
           </motion.div>
@@ -36,23 +34,20 @@ export function SonoraPage() {
       </AnimatePresence>
 
       {!isLoading && (
-        <motion.main
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.55 }}
-          className="bg-bg"
-        >
-          <Hero />
-          <ProductShowcase />
-          <Features />
-          <UseCases />
-          <Privacy />
-          <HowItWorks />
-          <StudioModes />
-          <Download />
-          <Faq />
+        <div className="overflow-x-hidden bg-bg">
+          <main className="relative z-10 rounded-b-[1.75rem] bg-bg shadow-[0_24px_80px_rgba(0,0,0,0.65)] md:rounded-b-[2.5rem]">
+            <Hero />
+            <ProductShowcase />
+            <Features />
+            <UseCases />
+            <Privacy />
+            <StudioModes />
+            <Faq />
+            <div className="h-8 bg-bg md:h-12" aria-hidden />
+          </main>
+
           <Footer />
-        </motion.main>
+        </div>
       )}
     </>
   )

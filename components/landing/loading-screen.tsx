@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { LogoMark, WaveformBars } from "./logo-mark"
 
 const WORDS = ["Private", "Offline", "Local"]
-const DURATION_MS = 2400
+const DURATION_MS = 300
 
 type LoadingScreenProps = {
   onComplete: () => void
@@ -25,7 +25,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       if (progress < 1) {
         frame = requestAnimationFrame(tick)
       } else {
-        setTimeout(onComplete, 350)
+        setTimeout(onComplete, 120)
       }
     }
 
@@ -36,7 +36,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   useEffect(() => {
     const id = setInterval(() => {
       setWordIndex((i) => (i + 1) % WORDS.length)
-    }, 800)
+    }, 450)
     return () => clearInterval(id)
   }, [])
 
@@ -45,10 +45,10 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       <motion.div
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
-        className="absolute left-6 top-6 flex items-center gap-3 md:left-10 md:top-10"
+        className="absolute top-6 left-6 flex items-center gap-3 md:top-10 md:left-10"
       >
         <LogoMark size={28} />
-        <span className="text-xs font-medium uppercase tracking-[0.28em] text-faint">
+        <span className="text-xs font-medium tracking-[0.28em] text-faint uppercase">
           Studio
         </span>
       </motion.div>
@@ -69,16 +69,17 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         </AnimatePresence>
       </div>
 
-      <div className="absolute bottom-10 right-6 font-mono text-5xl tabular-nums text-fg md:bottom-14 md:right-10 md:text-7xl">
+      <div className="absolute right-6 bottom-10 font-mono text-5xl text-fg tabular-nums md:right-10 md:bottom-14 md:text-7xl">
         {String(count).padStart(3, "0")}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-border">
+      <div className="absolute right-0 bottom-0 left-0 h-[2px] bg-border">
         <div
           className="h-full origin-left bg-accent"
           style={{
             transform: `scaleX(${count / 100})`,
-            boxShadow: "0 0 12px color-mix(in srgb, var(--accent) 45%, transparent)",
+            boxShadow:
+              "0 0 12px color-mix(in srgb, var(--accent) 45%, transparent)",
           }}
         />
       </div>

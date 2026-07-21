@@ -1,4 +1,7 @@
+"use client"
+
 import { cn } from "@/lib/utils"
+import { Magnetic } from "./magnetic"
 
 type AccentButtonProps = {
   children: React.ReactNode
@@ -20,7 +23,7 @@ export function AccentButton({
   external,
 }: AccentButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300",
+    "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-300",
     size === "sm" && "px-4 py-2 text-sm",
     size === "md" && "px-6 py-3 text-sm",
     size === "lg" && "px-8 py-3.5 text-base",
@@ -34,7 +37,8 @@ export function AccentButton({
 
   if (href) {
     return (
-      <a
+      <Magnetic
+        as="a"
         href={href}
         className={classes}
         onClick={onClick}
@@ -43,13 +47,13 @@ export function AccentButton({
           : {})}
       >
         {children}
-      </a>
+      </Magnetic>
     )
   }
 
   return (
-    <button type="button" className={classes} onClick={onClick}>
+    <Magnetic as="button" type="button" className={classes} onClick={onClick}>
       {children}
-    </button>
+    </Magnetic>
   )
 }
