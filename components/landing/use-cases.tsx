@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Film, FileText, MessageSquare } from "lucide-react"
+import { Film, FileText, MessageSquare, Bot } from "lucide-react"
 import { Reveal, SectionEyebrow, SectionHeading, easeOutExpo } from "./motion"
 
 const USE_CASES = [
@@ -22,6 +22,12 @@ const USE_CASES = [
     body: "Hold your hotkey and speak into the focused field—mail, docs, chat—while Sonora injects text from a quiet overlay.",
     icon: MessageSquare,
     accent: "from-accent/25 to-transparent",
+  },
+  {
+    title: "Automate with local agents",
+    body: "Point scripts, n8n, Cursor, or custom tools at localhost:8880 to synthesize and transcribe with the same engines as the UI—no cloud TTS bill.",
+    icon: Bot,
+    accent: "from-accent/20 to-transparent",
   },
 ]
 

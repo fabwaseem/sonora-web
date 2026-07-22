@@ -15,7 +15,11 @@ const FAQS = [
   },
   {
     q: "Does my audio leave my computer?",
-    a: "During normal use, text, audio, transcriptions, and voices stay local. Internet is only needed for setup downloads, optional models, and update checks.",
+    a: "During normal use, text, audio, transcriptions, and voices stay local—including requests through the local HTTP API. Internet is only needed for setup downloads, optional models, and update checks.",
+  },
+  {
+    q: "Is there a developer API?",
+    a: "Yes. While Sonora is running, a FastAPI server listens on http://127.0.0.1:8880 for TTS, STT, voices, engines, and cache. Configure API keys, CORS, and OpenAPI docs under Settings → API. Loopback can stay key-free so the studio keeps working.",
   },
   {
     q: "Do I need Python installed?",
@@ -23,7 +27,11 @@ const FAQS = [
   },
   {
     q: "What happens on first launch?",
-    a: "A guided setup installs the private runtime and downloads the default speech model. After that, you can work offline.",
+    a: "A guided setup installs the private runtime, then onboarding lets you choose TTS and STT models (with download progress), set a dictation hotkey, and enter the studio. After models are installed, you can work offline.",
+  },
+  {
+    q: "Which engines and models are included?",
+    a: "TTS: Kokoro, VibeVoice, Chatterbox, OmniVoice, VoxCPM, and Qwen (one active at a time). STT: Whisper-family sizes from Tiny through Large v3. Download or install what you need from the app or the API.",
   },
   {
     q: "Can I use Sonora without a GPU?",
@@ -51,8 +59,8 @@ export function Faq() {
               <SectionEyebrow>FAQ</SectionEyebrow>
               <SectionHeading>Common questions</SectionHeading>
               <p className="mt-3 max-w-md text-sm text-muted">
-                Quick answers about privacy, setup, and running Sonora on your
-                machine.
+                Quick answers about privacy, setup, the local API, and running
+                Sonora on your machine.
               </p>
             </div>
             <AccentButton

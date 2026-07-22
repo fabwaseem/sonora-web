@@ -20,7 +20,7 @@ if (typeof window !== "undefined") {
 const MARQUEE = [
   "Private",
   "Offline",
-  "Local",
+  "Local API",
   "Text to speech",
   "Speech to text",
   "Global dictation",

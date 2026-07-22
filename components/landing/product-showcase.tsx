@@ -49,8 +49,9 @@ export function ProductShowcase() {
         <Reveal className="mb-8 text-center md:mb-10">
           <SectionEyebrow className="mb-3">Inside the booth</SectionEyebrow>
           <p className="mx-auto max-w-lg text-sm text-muted md:text-base">
-            A focused workspace for generation, transcription, and voices—designed
-            to feel like a private studio, not a cloud dashboard.
+            A focused workspace for generation, transcription, voices, and a
+            local API—designed to feel like a private studio, not a cloud
+            dashboard.
           </p>
         </Reveal>
 

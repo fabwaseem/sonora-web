@@ -56,7 +56,7 @@ export function Navbar() {
         )}
       </AnimatePresence>
 
-      <div className="relative z-50 w-full max-w-3xl">
+      <div className="relative z-50 w-full max-w-4xl">
         <nav
           className={cn(
             "flex w-full items-center justify-between gap-2 rounded-full border border-border bg-surface/80 px-2 py-2 backdrop-blur-xl transition-shadow",
@@ -89,7 +89,7 @@ export function Navbar() {
                   go(link.href, link.label)
                 }}
                 className={cn(
-                  "rounded-full px-3.5 py-1.5 text-sm transition-colors",
+                  "rounded-full px-2.5 py-1.5 text-sm transition-colors lg:px-3.5",
                   active === link.label
                     ? "bg-inset text-fg"
                     : "text-muted hover:text-fg"

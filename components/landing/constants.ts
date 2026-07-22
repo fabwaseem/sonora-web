@@ -14,6 +14,8 @@ export const RELEASES_URL =
 
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
+  { label: "Updates", href: "#updates" },
+  { label: "API", href: "#api" },
   { label: "Privacy", href: "#privacy" },
   { label: "FAQ", href: "#faq" },
 ] as const

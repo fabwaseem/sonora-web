@@ -79,8 +79,8 @@ export function Hero() {
           Your voice studio, without the cloud.
         </p>
         <p className="hero-line mb-10 max-w-lg text-sm leading-relaxed text-muted opacity-0 will-change-transform md:text-base">
-          Create natural speech, transcribe audio, and dictate into any app—all
-          privately on your machine.
+          Create natural speech, transcribe audio, dictate into any app, and
+          call the same engines from a local API—all privately on your machine.
         </p>
 
         <div className="hero-cta flex flex-wrap items-center justify-center gap-3 opacity-0 will-change-transform">
@@ -90,13 +90,13 @@ export function Hero() {
               ↓
             </span>
           </AccentButton>
-          <AccentButton href="#features" variant="outline" size="lg">
-            Explore features
+          <AccentButton href="#api" variant="outline" size="lg">
+            Local API
           </AccentButton>
         </div>
 
         <p className="hero-line mt-6 font-mono text-xs text-faint opacity-0 will-change-transform">
-          Free · Offline
+          Free · Offline · Local API
         </p>
       </div>
 

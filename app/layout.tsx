@@ -21,11 +21,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Sonora — Private offline speech studio for Windows",
   description:
-    "Create natural speech, transcribe audio, and dictate into any app—all on your machine. Fully offline TTS, STT, and global dictation.",
+    "Local TTS, STT, and global dictation for Windows—plus a localhost HTTP API for scripts and AI agents. Fully offline after models download.",
   openGraph: {
     title: "Sonora — Your voice studio, without the cloud",
     description:
-      "A private, fully offline speech studio for Windows. Text-to-speech, speech-to-text, and global dictation on your machine.",
+      "Private offline speech studio for Windows. Text-to-speech, speech-to-text, dictation, and a local HTTP API on your machine.",
     images: ["/images/preview.jpg"],
   },
 }

@@ -6,7 +6,9 @@ import { LoadingScreen } from "./loading-screen"
 import { Hero } from "./hero"
 import { ProductShowcase } from "./product-showcase"
 import { Features } from "./features"
+import { WhatsNew } from "./whats-new"
 import { UseCases } from "./use-cases"
+import { LocalApi } from "./local-api"
 import { Privacy } from "./privacy"
 import { StudioModes } from "./studio-modes"
 import { Faq } from "./faq"
@@ -39,7 +41,9 @@ export function SonoraPage() {
             <Hero />
             <ProductShowcase />
             <Features />
+            <WhatsNew />
             <UseCases />
+            <LocalApi />
             <Privacy />
             <StudioModes />
             <Faq />

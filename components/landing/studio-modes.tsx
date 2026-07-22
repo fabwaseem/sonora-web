@@ -9,25 +9,25 @@ const MODES = [
     label: "Text to speech",
     detail: "Generate · Recents · Voices",
     blurb:
-      "Write a script, pick a voice, and render natural speech with multi-engine local models.",
+      "Write a script, pick a voice, and render natural speech with multi-engine local models—Kokoro through Qwen.",
   },
   {
     label: "Speech to text",
     detail: "Audio · Video · Mic",
     blurb:
-      "Drop in recordings or capture from the mic—Whisper-family models transcribe on your machine.",
+      "Drop in recordings or capture from the mic—Whisper-family models from Tiny to Large v3 transcribe on your machine.",
   },
   {
     label: "Dictation",
     detail: "Global hotkey · Overlay",
     blurb:
-      "Speak into any focused Windows field. Sonora listens privately and types for you.",
+      "Speak into any focused Windows field. Sonora listens privately and types for you from the tray.",
   },
   {
     label: "Settings",
-    detail: "Window · Tray · Updates",
+    detail: "API · Hotkeys · Updates",
     blurb:
-      "Tune the booth—window behavior, tray, hotkeys, and signed automatic updates.",
+      "Tune the booth—local HTTP API keys and docs, dictation hotkeys, window and tray behavior, and signed updates.",
   },
 ]
 
@@ -107,7 +107,8 @@ export function StudioModes() {
             </SectionHeading>
             <p className="mb-8 text-sm leading-relaxed text-muted md:text-base">
               Swap open-source TTS engines and Whisper-family ASR models as your
-              work demands—GPU-accelerated when available, CPU-capable when not.
+              work demands—from the UI or the local API. GPU-accelerated when
+              available, CPU-capable when not.
             </p>
             <div className="flex flex-wrap gap-2">
               {ENGINES.map((engine, i) => (

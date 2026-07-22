@@ -15,14 +15,14 @@ const PILLARS = [
   {
     n: "01",
     title: "Stays on your machine",
-    body: "Scripts, recordings, transcriptions, voice samples, and generated audio remain local during normal use.",
+    body: "Scripts, recordings, transcriptions, voice samples, generated audio, and local API traffic remain on your PC during normal use.",
     icon: Shield,
     signal: "On-device",
   },
   {
     n: "02",
     title: "Offline",
-    body: "Once models are installed, speech generation and recognition work without a cloud round-trip.",
+    body: "Once models are installed, speech generation and recognition work without a cloud round-trip—UI and localhost API alike.",
     icon: WifiOff,
     signal: "No uplink",
   },
@@ -148,7 +148,7 @@ export function Privacy() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["TTS", "STT", "Dictation", "Voices"].map((tag) => (
+              {["TTS", "STT", "Dictation", "API", "Voices"].map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full border border-border bg-inset px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-faint"
